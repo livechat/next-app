@@ -1,0 +1,35 @@
+{
+  "name": "template app",
+  "baseURL": "https://example.com",
+  "auth": {
+    "clientType": "javascript_app",
+    "scopes": [],
+    "redirectURI": "%baseURL%"
+  },
+  "widget": [
+    {
+      "url": "%baseURL%/app-settings",
+      "placement": "settings"
+    },
+    {
+      "url": "%baseURL%/chat-details",
+      "placement": "plugin"
+    },
+    {
+      "url": "%baseURL%/fullscreen",
+      "placement": "fullscreen"
+    },
+    {
+      "url": "%baseURL%/message-box",
+      "placement": "messagebox"
+    }
+  ],
+  "appWebhooks": {
+    "url": "%baseURL%/api/app-webhook"
+  },
+  "chatActions": {
+    "url": "%baseURL%/api/chat-action",
+    "label": "Template app action",
+    "action": "sendWebhook"
+  }
+}
