@@ -4,7 +4,7 @@
   "auth": {
     "clientType": "javascript_app",
     "scopes": [],
-    "redirectURI": "%baseURL%"
+    "redirectURI": ["%baseURL%"]
   },
   "widget": [
     {
