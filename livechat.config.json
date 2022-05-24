@@ -1,16 +1,15 @@
 {
-  "name": "template app",
+  "appId": "",
+  "name": "Template App",
+  "install": true,
   "baseURL": "https://example.com",
   "auth": {
+    "clientId": "",
     "clientType": "javascript_app",
-    "scopes": [],
+    "scopes": ["agents--all:ro"],
     "redirectURI": ["%baseURL%"]
   },
   "widget": [
-    {
-      "url": "%baseURL%/app-settings",
-      "placement": "settings"
-    },
     {
       "url": "%baseURL%/chat-details",
       "placement": "plugin"

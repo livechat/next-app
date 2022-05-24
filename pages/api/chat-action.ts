@@ -1,35 +1,30 @@
-import camelcase from 'camelcase'
-import { StatusCodes } from 'http-status-codes'
 import { NextApiRequest, NextApiResponse } from 'next'
-import mapKeys from 'lodash.mapkeys'
 
 type ChatActionPayload = {
-  licenceId: string
-  agentId: string
+  licence_id: string
+  agent_id: string
   time: string
-  instanceId: string
+  instance_id: string
   source: string
-  chatId: string
-  threadId: string
-  customerId: string
-  customerName: string
-  customerEmail: string
-  customerHost: string
-  customerIp: string
-  customerLatitude: string
-  customerLongitude: string
-  customerCountry: string
-  customerRegion: string
-  customerCity: string
-  customerTimezone: string
+  chat_id: string
+  thread_id: string
+  customer_id: string
+  customer_name: string
+  customer_email: string
+  customer_host: string
+  customer_ip: string
+  customer_latitude: string
+  customer_longitude: string
+  customer_country: string
+  customer_region: string
+  customer_city: string
+  customer_timezone: string
 }
 
 async function ChatAction(req: NextApiRequest, res: NextApiResponse) {
-  const payload = mapKeys(req.query, (_, key) => camelcase(key)) as ChatActionPayload
-
+  const payload = req.query as ChatActionPayload
   console.log('ChatAction', payload)
-
-  res.status(StatusCodes.OK).end()
+  res.status(200).end()
 }
 
 export default ChatAction

@@ -1,6 +1,7 @@
 import { IRichMessage } from '@livechat/agent-app-sdk'
 import { Button } from '@livechat/design-system'
 import FullScreenLoader from 'components/FullScreenLoader'
+import ViewContainer from 'components/ViewContainer'
 import useMessageBoxWidget from 'hooks/useMessageBoxWidget'
 
 const RICH_MESSAGE: IRichMessage = {
@@ -30,12 +31,12 @@ function MessageBox() {
   }
 
   return (
-    <div>
+    <ViewContainer>
       <h1>Message box widget</h1>
       <Button kind="primary" type="button" onClick={() => messageBoxWidget.putMessage(RICH_MESSAGE)}>
         Put a message
       </Button>
-    </div>
+    </ViewContainer>
   )
 }
 

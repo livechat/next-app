@@ -1,9 +1,8 @@
 import { Loader } from '@livechat/design-system'
-import styles from 'styles/full-screen-loader.module.css'
 
 function FullScreenLoader() {
   return (
-    <div className={styles.container}>
+    <div className="full-screen-loader">
       <Loader size="large" />
     </div>
   )

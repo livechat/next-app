@@ -1,20 +1,26 @@
-import { ICustomerProfile } from '@livechat/agent-app-sdk'
+import { Card } from '@livechat/design-system'
 import FullScreenLoader from 'components/FullScreenLoader'
+import ViewContainer from 'components/ViewContainer'
 import useDetailsWidget from 'hooks/useDetailsWidget'
 
 function ChatDetails() {
   const { widget, customerProfile } = useDetailsWidget()
 
-  if (widget == null) {
+  if (widget === null || customerProfile === null) {
     return <FullScreenLoader />
   }
 
   return (
-    <div>
+    <ViewContainer>
       <h1>Chat Details widget</h1>
-      <label>Customer profile:</label>
-      <code>{JSON.stringify(customerProfile, null, 2)}</code>
-    </div>
+      <Card title="Customer profile">
+        <ul>
+          <li>Name: {customerProfile.name}</li>
+          <li>Country: {customerProfile.geolocation.country}</li>
+          <li>Timezone: {customerProfile.geolocation.timezone}</li>
+        </ul>
+      </Card>
+    </ViewContainer>
   )
 }
 

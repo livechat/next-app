@@ -1,22 +1,20 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { StatusCodes } from 'http-status-codes'
-import assert from 'http-assert'
 import camelcase from 'camelcase'
 import { Config } from 'lib/config'
 
 async function AppWebook(req: NextApiRequest, res: NextApiResponse) {
   try {
     const { clientID, licenseID, event, payload } = req.body
-
-    assert(clientID === Config.lcClientId, StatusCodes.UNAUTHORIZED)
-
+    if (clientID !== Config.lcClientId) {
+      throw new Error('Unauthorized')
+    }
     const handlerName = camelcase(event) as keyof typeof WebhooksHandlers
     await WebhooksHandlers[handlerName](licenseID, payload)
   } catch (error) {
     const { message } = error as Error
-    console.log(message)
+    console.log('AppWebook -> error: ', message)
   } finally {
-    res.status(StatusCodes.OK).end()
+    res.status(200).end()
   }
 }
 

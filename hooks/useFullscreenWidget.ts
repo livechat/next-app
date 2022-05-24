@@ -1,5 +1,5 @@
-import { createFullscreenWidget, IFullscreenWidget } from '@livechat/agent-app-sdk'
 import { useEffect, useState } from 'react'
+import { createFullscreenWidget, IFullscreenWidget } from '@livechat/agent-app-sdk'
 
 function useFullscreenWidget(): IFullscreenWidget | null {
   const [widget, setWidget] = useState<IFullscreenWidget | null>(null)

@@ -1,5 +1,5 @@
 {
-  "name": "livechat-app",
+  "name": "@livechat/next-app",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -13,17 +13,11 @@
     "@livechat/agent-app-sdk": "^1.5.2",
     "@livechat/design-system": "^0.13.1",
     "camelcase": "^6.3.0",
-    "http-assert": "^1.5.0",
-    "http-status-codes": "^2.2.0",
-    "lodash.mapkeys": "^4.6.0",
     "next": "12.1.0",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "@types/http-assert": "^1.5.3",
-    "@types/http-status-codes": "^1.2.0",
-    "@types/lodash.mapkeys": "^4.6.6",
     "@types/node": "^17.0.21",
     "@types/react": "^17.0.40",
     "@typescript-eslint/eslint-plugin": "^5.14.0",

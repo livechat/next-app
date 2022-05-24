@@ -1,5 +1,5 @@
-import { createDetailsWidget, ICustomerProfile, IDetailsWidget } from '@livechat/agent-app-sdk'
 import { useEffect, useState } from 'react'
+import { createDetailsWidget, ICustomerProfile, IDetailsWidget } from '@livechat/agent-app-sdk'
 
 function useDetailsWidget() {
   const [widget, setWidget] = useState<IDetailsWidget | null>(null)
