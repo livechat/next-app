@@ -13,13 +13,13 @@ npm install
 login to the LiveChat Developer Console CLI using your LiveChat account
 
 ```sh
-dps login
+lcdev login
 ```
 
 bootstrap new LiveChat app using dedicated CLI
 
 ```ts
-dps bootstrap --baseURL <your-local-url>
+lcdev bootstrap --baseURL <your-local-url>
 ```
 
 start local development server
